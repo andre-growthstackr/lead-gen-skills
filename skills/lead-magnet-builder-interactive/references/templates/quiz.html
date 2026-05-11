@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>{{TITLE}} — Quiz</title>
+<style>
+  :root {
+    --bg: #faf7f2;
+    --text: #1a1a1a;
+    --accent: #ff6b6b;
+    --muted: #6b6b6b;
+    --border: #e5e0d8;
+    --radius: 10px;
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; font-family: 'Inter', -apple-system, sans-serif;
+         background: var(--bg); color: var(--text); line-height: 1.5; }
+  .container { max-width: 640px; margin: 0 auto; padding: 48px 24px; }
+  h1 { font-size: 28px; font-weight: 600; margin: 0 0 8px; }
+  h1 em { font-style: italic; color: var(--accent); }
+  .progress { height: 4px; background: var(--border); border-radius: 2px; margin: 24px 0 32px; }
+  .progress-fill { height: 100%; background: var(--accent); border-radius: 2px; transition: width .25s ease; }
+  .question { font-size: 20px; font-weight: 500; margin: 0 0 24px; }
+  .options { display: flex; flex-direction: column; gap: 12px; }
+  .option {
+    padding: 16px; border: 1px solid var(--border); border-radius: var(--radius);
+    background: #fff; cursor: pointer; font-size: 16px;
+    transition: border-color .15s, background .15s;
+  }
+  .option:hover { border-color: var(--accent); }
+  .option.selected { border-color: var(--accent); background: #fff5f5; }
+  .nav { display: flex; justify-content: space-between; margin-top: 32px; }
+  button {
+    padding: 12px 20px; border: none; border-radius: var(--radius);
+    font-size: 15px; font-weight: 500; cursor: pointer;
+    font-family: inherit;
+  }
+  .btn-primary { background: var(--text); color: var(--bg); }
+  .btn-primary:hover { background: var(--accent); }
+  .btn-secondary { background: transparent; color: var(--muted); }
+  .result { display: none; }
+  .result.visible { display: block; }
+  .result-category {
+    font-size: 32px; font-weight: 600; color: var(--accent);
+    margin: 24px 0 8px;
+  }
+  .result-description { font-size: 16px; color: var(--muted); margin-bottom: 32px; }
+  .recommendations { list-style: none; padding: 0; }
+  .recommendations li {
+    padding: 16px; background: #fff; border-radius: var(--radius);
+    margin-bottom: 12px; border: 1px solid var(--border);
+  }
+  input[type="email"] {
+    width: 100%; padding: 12px 14px; border: 1px solid var(--border);
+    border-radius: var(--radius); font-size: 16px; margin-top: 8px;
+  }
+</style>
+</head>
+<body>
+<div class="container">
+  <div id="quiz">
+    <h1>{{TITLE}} — vilken typ är du?</h1>
+    <div class="progress"><div class="progress-fill" id="progress" style="width:0%"></div></div>
+    <div id="question-container"></div>
+    <div class="nav">
+      <button class="btn-secondary" id="back" style="visibility:hidden">Tillbaka</button>
+      <button class="btn-primary" id="next">Nästa</button>
+    </div>
+  </div>
+
+  <div id="result" class="result">
+    <h1>Du är <em id="result-category-name">—</em></h1>
+    <p class="result-description" id="result-description">—</p>
+    <h2>Dina tre rekommendationer:</h2>
+    <ul class="recommendations" id="recommendations"></ul>
+    <h3>Få din handlingsplan på email:</h3>
+    <input type="email" id="email" placeholder="din@email.com" />
+    <button class="btn-primary" id="submit-email" style="width:100%;margin-top:12px;">Skicka handlingsplan</button>
+  </div>
+</div>
+
+<script>
+  // FRÅGOR — anpassa per quiz
+  const questions = [
+    {
+      q: '{{QUESTION_1}}',
+      options: [
+        { text: '{{OPT_1A}}', score: { A: 3, B: 0, C: 0 } },
+        { text: '{{OPT_1B}}', score: { A: 0, B: 3, C: 0 } },
+        { text: '{{OPT_1C}}', score: { A: 0, B: 0, C: 3 } }
+      ]
+    }
+    // ... lägg till 5-10 frågor totalt
+  ];
+
+  // KATEGORIER — anpassa per quiz
+  const categories = {
+    A: { name: '{{CATEGORY_A_NAME}}', description: '{{CATEGORY_A_DESC}}',
+         recommendations: ['{{REC_A1}}', '{{REC_A2}}', '{{REC_A3}}'] },
+    B: { name: '{{CATEGORY_B_NAME}}', description: '{{CATEGORY_B_DESC}}',
+         recommendations: ['{{REC_B1}}', '{{REC_B2}}', '{{REC_B3}}'] },
+    C: { name: '{{CATEGORY_C_NAME}}', description: '{{CATEGORY_C_DESC}}',
+         recommendations: ['{{REC_C1}}', '{{REC_C2}}', '{{REC_C3}}'] }
+  };
+
+  let currentQ = 0;
+  let answers = [];
+  let scores = { A: 0, B: 0, C: 0 };
+
+  function renderQuestion() {
+    const q = questions[currentQ];
+    const container = document.getElementById('question-container');
+    container.innerHTML = `
+      <p class="question">${q.q}</p>
+      <div class="options">
+        ${q.options.map((opt, i) => `
+          <div class="option ${answers[currentQ] === i ? 'selected' : ''}" data-idx="${i}">${opt.text}</div>
+        `).join('')}
+      </div>
+    `;
+    container.querySelectorAll('.option').forEach(el => {
+      el.addEventListener('click', () => {
+        answers[currentQ] = parseInt(el.dataset.idx);
+        renderQuestion();
+      });
+    });
+    document.getElementById('progress').style.width =
+      ((currentQ + 1) / questions.length * 100) + '%';
+    document.getElementById('back').style.visibility = currentQ > 0 ? 'visible' : 'hidden';
+    document.getElementById('next').textContent =
+      currentQ === questions.length - 1 ? 'Visa mitt resultat' : 'Nästa';
+  }
+
+  document.getElementById('next').addEventListener('click', () => {
+    if (answers[currentQ] === undefined) return alert('Välj ett svar');
+    if (currentQ < questions.length - 1) {
+      currentQ++;
+      renderQuestion();
+    } else {
+      // räkna ut score
+      answers.forEach((a, i) => {
+        const s = questions[i].options[a].score;
+        Object.keys(s).forEach(k => scores[k] += s[k]);
+      });
+      const winner = Object.keys(scores).reduce((a, b) => scores[a] > scores[b] ? a : b);
+      const cat = categories[winner];
+      document.getElementById('quiz').style.display = 'none';
+      document.getElementById('result').classList.add('visible');
+      document.getElementById('result-category-name').textContent = cat.name;
+      document.getElementById('result-description').textContent = cat.description;
+      document.getElementById('recommendations').innerHTML =
+        cat.recommendations.map(r => `<li>${r}</li>`).join('');
+      window._quizResult = { category: winner, scores };
+    }
+  });
+
+  document.getElementById('back').addEventListener('click', () => {
+    if (currentQ > 0) { currentQ--; renderQuestion(); }
+  });
+
+  document.getElementById('submit-email').addEventListener('click', async () => {
+    const email = document.getElementById('email').value;
+    if (!email || !email.includes('@')) return alert('Ange en giltig email');
+    const payload = {
+      email,
+      lead_magnet: '{{LEAD_MAGNET_ID}}',
+      category: window._quizResult.category,
+      scores: window._quizResult.scores,
+      answers,
+      submitted_at: new Date().toISOString()
+    };
+    try {
+      await fetch('{{WEBHOOK_URL}}', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload)
+      });
+      document.getElementById('result').innerHTML =
+        '<h1>Tack!</h1><p>Din handlingsplan ligger i inkorgen.</p>';
+    } catch (err) { console.error(err); alert('Något gick fel.'); }
+  });
+
+  renderQuestion();
+</script>
+</body>
+</html>

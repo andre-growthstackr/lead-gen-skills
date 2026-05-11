@@ -1,0 +1,40 @@
+# macOS
+.DS_Store
+._.DS_Store
+**/.DS_Store
+
+# Editor / IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+.cursor/
+
+# Python (om vi har script-baserade Skills)
+__pycache__/
+*.pyc
+*.pyo
+.venv/
+venv/
+
+# Node (om vi har TypeScript-baserade Skills)
+node_modules/
+package-lock.json
+yarn.lock
+
+# Logs och temp
+*.log
+tmp/
+.tmp/
+
+# Secrets
+.env
+.env.local
+*.key
+*.pem
+credentials.json
+
+# Build artifacts
+dist/
+build/
+out/

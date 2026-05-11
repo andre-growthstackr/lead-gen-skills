@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>{{TITLE}} — Kalkylator</title>
+<style>
+  :root {
+    --bg: #faf7f2;
+    --text: #1a1a1a;
+    --accent: #ff6b6b;
+    --muted: #6b6b6b;
+    --border: #e5e0d8;
+    --radius: 10px;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; padding: 0;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    background: var(--bg); color: var(--text);
+    line-height: 1.5;
+  }
+  .container { max-width: 640px; margin: 0 auto; padding: 48px 24px; }
+  h1 { font-size: 32px; font-weight: 600; margin: 0 0 8px; }
+  h1 em { font-style: italic; color: var(--accent); }
+  .lead { font-size: 17px; color: var(--muted); margin: 0 0 32px; }
+  .form-group { margin-bottom: 20px; }
+  label { display: block; font-weight: 500; margin-bottom: 6px; font-size: 15px; }
+  .hint { font-size: 13px; color: var(--muted); margin-top: 4px; }
+  input[type="number"], input[type="email"], input[type="text"] {
+    width: 100%; padding: 12px 14px;
+    border: 1px solid var(--border); border-radius: var(--radius);
+    font-size: 16px; font-family: inherit; background: #fff;
+  }
+  input:focus { outline: none; border-color: var(--accent); }
+  button {
+    width: 100%; padding: 14px;
+    background: var(--text); color: var(--bg);
+    border: none; border-radius: var(--radius);
+    font-size: 16px; font-weight: 500; cursor: pointer;
+    font-family: inherit;
+  }
+  button:hover { background: var(--accent); }
+  .result {
+    margin-top: 32px; padding: 24px;
+    border: 1px solid var(--border); border-radius: var(--radius);
+    background: #fff; display: none;
+  }
+  .result.visible { display: block; }
+  .result-number { font-size: 48px; font-weight: 600; color: var(--accent); margin: 0 0 8px; }
+  .result-label { font-size: 14px; color: var(--muted); }
+  .email-gate { margin-top: 20px; }
+</style>
+</head>
+<body>
+<div class="container">
+  <h1>Räkna ut din <em>{{ACCENT_WORD}}</em></h1>
+  <p class="lead">{{SUB_HEADLINE}}</p>
+
+  <form id="calc-form">
+    <!-- INPUTS — anpassa per kalkylator -->
+    <div class="form-group">
+      <label for="input1">{{INPUT_1_LABEL}}</label>
+      <input type="number" id="input1" name="input1" required min="0" />
+      <div class="hint">{{INPUT_1_HINT}}</div>
+    </div>
+    <div class="form-group">
+      <label for="input2">{{INPUT_2_LABEL}}</label>
+      <input type="number" id="input2" name="input2" required min="0" />
+      <div class="hint">{{INPUT_2_HINT}}</div>
+    </div>
+    <div class="form-group">
+      <label for="input3">{{INPUT_3_LABEL}}</label>
+      <input type="number" id="input3" name="input3" required min="0" />
+      <div class="hint">{{INPUT_3_HINT}}</div>
+    </div>
+
+    <button type="submit">Räkna ut mitt resultat</button>
+  </form>
+
+  <div id="result" class="result">
+    <div class="result-number" id="result-number">—</div>
+    <div class="result-label" id="result-label">{{RESULT_LABEL}}</div>
+
+    <div class="email-gate">
+      <p style="margin-top:24px;">Få full rapport på email:</p>
+      <div class="form-group">
+        <input type="email" id="email" placeholder="din@email.com" required />
+      </div>
+      <button id="submit-email">Skicka rapporten</button>
+    </div>
+  </div>
+</div>
+
+<script>
+  const form = document.getElementById('calc-form');
+  const resultBox = document.getElementById('result');
+  const resultNumber = document.getElementById('result-number');
+  let calculatedValue = null;
+  let inputs = {};
+
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const i1 = parseFloat(document.getElementById('input1').value) || 0;
+    const i2 = parseFloat(document.getElementById('input2').value) || 0;
+    const i3 = parseFloat(document.getElementById('input3').value) || 0;
+
+    // FORMEL — anpassa per kalkylator
+    calculatedValue = i1 * i2 - i3; // exempel
+    inputs = { input1: i1, input2: i2, input3: i3 };
+
+    resultNumber.textContent = calculatedValue.toLocaleString('sv-SE') + ' kr';
+    resultBox.classList.add('visible');
+    resultBox.scrollIntoView({ behavior: 'smooth' });
+  });
+
+  document.getElementById('submit-email').addEventListener('click', async () => {
+    const email = document.getElementById('email').value;
+    if (!email || !email.includes('@')) {
+      alert('Ange en giltig email');
+      return;
+    }
+    const payload = {
+      email,
+      lead_magnet: '{{LEAD_MAGNET_ID}}',
+      score: calculatedValue,
+      inputs,
+      submitted_at: new Date().toISOString(),
+      source: 'lead-magnet-builder'
+    };
+    try {
+      await fetch('{{WEBHOOK_URL}}', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload)
+      });
+      document.getElementById('result').innerHTML =
+        '<div class="result-number">Tack!</div><div class="result-label">Rapporten ligger i din inkorg.</div>';
+    } catch (err) {
+      console.error('Webhook failed', err);
+      alert('Något gick fel. Försök igen om en stund.');
+    }
+  });
+</script>
+</body>
+</html>
