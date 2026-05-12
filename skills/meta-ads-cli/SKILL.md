@@ -139,7 +139,7 @@ meta-ads metrics get \
 
 Om `cpa_yesterday > cpa_day_before_yesterday * 1.20`:
 
-1. Kör `voc-research`-skill för ny VoC-scrape
+1. Kör `voice-of-customer`-skill för ny VoC-scrape
 2. Kör `ad-ideation-4-angles` för 4 nya hooks
 3. Producera 4 nya creative-varianter via L4.2/L4.3
 4. Pusha som nya varianter till befintliga ad sets — pausa inte gamla, låt Andromeda välja

@@ -19,7 +19,7 @@ Skill för att tvinga fram en bättre formulering än en ensam Claude-utkast had
 
 - Long-form copy (>200 ord) → använd `manus-writer` eller `marketing-content-generator`
 - Tekniska beslut (arkitektur, val av verktyg) → vanlig Claude
-- Research/fakta-frågor → `voc-research` eller NotebookLM
+- Research/fakta-frågor → `voice-of-customer` eller NotebookLM
 - Snabba utkast där André vet vad han vill → skippa konsensus, skriv direkt
 
 Om André bara behöver ett utkast, inte konsensus — säg det och hoppa över skillen.

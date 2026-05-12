@@ -18,7 +18,7 @@ Skill för att bygga en konkurrent-matris som faktiskt informerar GTM-beslut —
 
 - Marknadsstorlek / TAM-research → vanlig research-skill eller NotebookLM
 - ICP-research → `icp-researcher` / `icp-builder`
-- Voice-research på konkurrenter → `voc-research`
+- Voice-research på konkurrenter → `voice-of-customer`
 - Formulera vår egen positionering → `multi-agent-consensus` (denna skill levererar input till den)
 
 ## Triggers — när skillen aktiveras

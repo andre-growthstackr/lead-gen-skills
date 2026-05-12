@@ -17,7 +17,7 @@ Skill för att bygga ett brand voice-dokument via strukturerad interview + hemsi
 ## Vad denna skill INTE gör
 
 - ICP-research → använd `icp-builder`
-- VoC-mining → använd `voc-research`
+- VoC-mining → använd `voice-of-customer`
 - Skriver inte färdig copy → använd brand-guidelines.skill.md som input till copy-jobb
 - Skapar inte logotyp, färgpalett från noll, eller designsystem — bara extraherar från hemsidan om det finns
 

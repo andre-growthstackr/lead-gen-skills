@@ -174,7 +174,7 @@ DAY_BEFORE_CPA=$(meta-ads metrics get \
 # Beräkna stegring i bash
 if (( $(echo "$YESTERDAY_CPA > $DAY_BEFORE_CPA * 1.2" | bc -l) )); then
   # Trigga ny VoC + creatives
-  claude run-skill voc-research
+  claude run-skill voice-of-customer
   claude run-skill ad-ideation-4-angles
 fi
 ```

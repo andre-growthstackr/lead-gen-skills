@@ -39,7 +39,7 @@ Idealkund, kundröst, konkurrenter och varumärke som filer som driver allt down
 | Skill | Beskrivning |
 |---|---|
 | `icp-builder` | Guided 8-stegs ICP-research med tre rutter (guided / data / web-research). Applicerar Mark Roberge's Green/Yellow/Red-framework, fyra-lager-modell (firmographic + behavioral + contextual + emotional), B2B/B2C dual-mode. Producerar polerat `.docx` med GYR-tabell, exclusion criteria, buyer intent signals, validation-schedule. Plus en kort `icp-summary.md` för Project Knowledge. |
-| `voc-research` | Voice of Customer-mining från G2/Capterra/Trustpilot/Reddit/YouTube via Firecrawl. Volymregel ≥100 datapunkter. Output: `voc-rapport.md` med topp-5 pains + ordagranna citat + `voice-of-customer.skill.md` för återanvändning. |
+| `voice-of-customer` | Guided 9-stegs VoC-research med tre rutter (guided / data / autonomous mining). ICP-anchored konkurrentselektion, Firecrawl-MCP mot G2/Capterra/Trustpilot/Reddit/YouTube/sales-calls. Volymregel ≥100 datapunkter över ≥3 kanaler. Pain/Value/Objection-taxonomi + JTBD-layering. Producerar polerat `.docx` quote-board-rapport + `voc-summary.md` för Project Knowledge + reusable `voice-of-customer.skill.md` för copy-jobb. |
 | `brand-voice-interview` | 8-fråge-interview + hemside-scrape + konkurrent-kontrast. Output: `brand-guidelines.md` (5 sektioner) + `brand-guidelines.skill.md` (kortfattad version för återanvändning i alla framtida copy-jobb). |
 | `konkurrentanalys` | Skrapar 3-5 konkurrenter (hemsida + Meta Ads Library + LinkedIn) via Firecrawl. Bygger `konkurrent-matris.md` med explicit "Lucka"-sektion — där pengarna finns. Kan köras schemalagt för vecko-diff. |
 | `multi-agent-consensus` | Orkestrerar 3 parallella sub-agents (Strateg, Pragmatiker, Devil's Advocate) över 3 rundor för formuleringar med hög stake (brand voice, positioning, taglines, ad-headlines). |
@@ -115,7 +115,7 @@ Skills i det här biblioteket bygger på en gemensam arkitektur:
 ```
 ~/.claude/ (eller motsvarande Project-rot)
 ├── icp-summary.md             ← genereras av icp-builder
-├── voc-rapport.md          ← genereras av voc-research
+├── voc-rapport.md          ← genereras av voice-of-customer
 ├── konkurrent-matris.md    ← genereras av konkurrentanalys
 ├── brand-guidelines.md     ← genereras av brand-voice-interview
 └── brand-guidelines.skill.md ← skill-version, ärvs av alla copy-jobb
