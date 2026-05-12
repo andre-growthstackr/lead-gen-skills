@@ -98,7 +98,7 @@ Output: enskilda citat med källhänvisning. Använd för hooks, proof points, d
 Output från NotebookLM ska aldrig hamna direkt i content. Det går först till Growth OS-filer:
 
 - Huvudquery-output → positionering.md, voc-rapport.md
-- Mottagar-query-output → icp-spec.md
+- Mottagar-query-output → icp-summary.md
 - Datapunkt-query-output → voc-rapport.md (med citat och källa)
 
 Sedan: när Claude genererar content, refererar promptens Kontext-sektion till Growth OS-filerna. Inte till NotebookLM direkt.
@@ -146,7 +146,7 @@ När användaren ber Claude göra en NotebookLM-session, leverera:
 - ...
 
 ## Uppdatera Growth OS
-- icp-spec.md: lägg till [vad]
+- icp-summary.md: lägg till [vad]
 - voc-rapport.md: lägg till citat [X, Y, Z]
 - positionering.md: revidera sektion om [vad]
 ```

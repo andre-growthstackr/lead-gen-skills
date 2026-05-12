@@ -30,7 +30,7 @@ Aktivera när användaren skriver:
 1. Läs av om användaren har gett konkret innehåll eller bara vill ha skelettet
 2. Om konkret: fyll i alla sektioner med exakt det användaren beskrivit. Lägg inte till spekulativ kontext.
 3. Om skelett: leverera tom mall med ledtext i varje sektion
-4. Påminn om Growth OS-filer i Kontext-sektionen om relevanta filer finns (icp-spec.md, brand-guidelines.skill.md osv)
+4. Påminn om Growth OS-filer i Kontext-sektionen om relevanta filer finns (icp-summary.md, brand-guidelines.skill.md osv)
 
 ## Output-format
 
@@ -50,7 +50,7 @@ Du är [konkret roll — t.ex. "en B2B-content-strateg med 10 års erfarenhet av
 # Kontext
 
 Referera till Growth OS-filer:
-- ICP: se `icp-spec.md`
+- ICP: se `icp-summary.md`
 - Brand voice: se `brand-guidelines.skill.md`
 - Positionering: se `positionering.md`
 - [Andra filer relevanta för uppgiften]

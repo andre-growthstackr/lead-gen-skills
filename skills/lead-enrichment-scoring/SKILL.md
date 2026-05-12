@@ -10,7 +10,7 @@ Skill för steg 2 i outbound-pipelinen: från råleads till kvalificerade leads.
 ## Vad skillen gör
 
 - Läser obearbetade leads från Airtable Leads-tabell (`status = "ny"`)
-- Läser ICP-kriterier från `icp-spec.md` i Project
+- Läser ICP-kriterier från `icp-summary.md` i Project
 - Berikar varje lead via Apify (LinkedIn) + Firecrawl (hemsida) + public APIs
 - Kör Claude-LLM-bedömning mot fyra ICP-dimensioner
 - Skriver Score (0-100) + motivering tillbaka till Airtable
@@ -117,7 +117,7 @@ list_records_for_table där status = "ny"
 ### 2. Läs ICP-spec
 
 ```
-Read icp-spec.md från Project
+Read icp-summary.md från Project
 ```
 
 Extrahera kriterierna som strukturerade fält (geografi, storlek, vertikal, tech, decision-maker).

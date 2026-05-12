@@ -16,7 +16,7 @@ Skill för att bygga ett brand voice-dokument via strukturerad interview + hemsi
 
 ## Vad denna skill INTE gör
 
-- ICP-research → använd `icp-interview`
+- ICP-research → använd `icp-builder`
 - VoC-mining → använd `voc-research`
 - Skriver inte färdig copy → använd brand-guidelines.skill.md som input till copy-jobb
 - Skapar inte logotyp, färgpalett från noll, eller designsystem — bara extraherar från hemsidan om det finns
@@ -166,7 +166,7 @@ Baserat på hemsidans copy + interview-svaren:
 
 **Vad ni säljer:** [En mening]
 
-**Till vem:** [ICP — kort form, hänvisa till `icp-spec.md` om det finns]
+**Till vem:** [ICP — kort form, hänvisa till `icp-summary.md` om det finns]
 
 **Vad gör er annorlunda:** [Det specifika de gör som inte konkurrenter gör — om Fråga 6 + 7 + 8 svaren ger underlag]
 

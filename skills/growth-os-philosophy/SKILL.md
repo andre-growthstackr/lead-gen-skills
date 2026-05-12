@@ -45,7 +45,7 @@ Ad-hoc fungerar för engångsuppgifter. Allt återkommande arbete (innehåll, sa
 
 Minsta uppsättning för B2B-marknadsförare:
 
-- **icp-spec.md** — Vem köper. Smärtor, triggers, jobs-to-be-done, motargument, vokabulär.
+- **icp-summary.md** — Vem köper. Smärtor, triggers, jobs-to-be-done, motargument, vokabulär.
 - **brand-guidelines.skill.md** — Tonalitet, förbjudna ord, exempel-meningar, stilregler.
 - **positionering.md** — Vad ni säger om er själva. Category, differentiering, proof points.
 - **pipelines.md** — Hur leads flödar genom funneln. Stages, kvalifikation, handoffs.

@@ -1,6 +1,6 @@
 ---
 name: ad-ideation-4-angles
-description: Generera 12 ad-koncept (4 vinklar × 3 hooks) för B2B-annonsering kopplat till kundresan. Läser icp-spec.md och voc-rapport.md från Project som indata och producerar smärta-fokus, lösnings-fokus, social proof, samt ROI/data-vinklar — varje med 3 hook-varianter. Använd skillen varje gång användaren skriver "ad ideation", "4 vinklar", "12 ad-varianter", "annonsdesign", eller ber om kreativa koncept för Meta/LinkedIn-kampanj. Output distribueras till short-form-video-Skill (L4.2) och image-post-Skill (L4.3) för faktisk produktion.
+description: Generera 12 ad-koncept (4 vinklar × 3 hooks) för B2B-annonsering kopplat till kundresan. Läser icp-summary.md och voc-rapport.md från Project som indata och producerar smärta-fokus, lösnings-fokus, social proof, samt ROI/data-vinklar — varje med 3 hook-varianter. Använd skillen varje gång användaren skriver "ad ideation", "4 vinklar", "12 ad-varianter", "annonsdesign", eller ber om kreativa koncept för Meta/LinkedIn-kampanj. Output distribueras till short-form-video-Skill (L4.2) och image-post-Skill (L4.3) för faktisk produktion.
 ---
 
 # ad-ideation-4-angles
@@ -9,7 +9,7 @@ Skill för att generera annonskoncept-portföljen som matar Modul 6:s kampanjer.
 
 ## Vad skillen gör
 
-- Läser `icp-spec.md` (idealkund + smärtor) och `voc-rapport.md` (kundernas egna formuleringar) från Project
+- Läser `icp-summary.md` (idealkund + smärtor) och `voc-rapport.md` (kundernas egna formuleringar) från Project
 - Genererar fyra distinkta vinklar kopplade till kundresan: smärta, lösning, social proof, ROI
 - Per vinkel: 3 hook-varianter → 12 ad-koncept totalt
 - Levererar tabell med koncept, hook, body, CTA och suggested format (video/image)
@@ -35,7 +35,7 @@ Aktivera när användaren skriver:
 
 ## Workflow
 
-1. **Hämta indata från Project.** Läs `icp-spec.md` och `voc-rapport.md`. Om någon saknas — fråga användaren innan du börjar. Skriv aldrig vinklar utan VoC i botten.
+1. **Hämta indata från Project.** Läs `icp-summary.md` och `voc-rapport.md`. Om någon saknas — fråga användaren innan du börjar. Skriv aldrig vinklar utan VoC i botten.
 
 2. **Identifiera fyra vinklar mappade mot kundresan.** Läs `references/angle-prompts.md` för varje vinkel-prompt och anti-patterns innan första körningen.
 
@@ -79,7 +79,7 @@ Bifoga också:
 
 Avbryt och fråga användaren om:
 
-- `icp-spec.md` eller `voc-rapport.md` saknas i Project
+- `icp-summary.md` eller `voc-rapport.md` saknas i Project
 - VoC-rapporten har färre än 5 kundcitat — för tunn data för att hitta autentiska vinklar
 - Användaren ber om "fler än 12 koncept" — det är inte skillens jobb, hänvisa till volume-varianter via L4.2/L4.3
 - Användaren ber om koncept utan att ange produkt/tjänst — fråga efter scope först

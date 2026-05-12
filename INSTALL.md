@@ -38,7 +38,7 @@ Eller, installera selektivt — välj bara dom Skills som matchar var du är i k
 | Modul | Skills att installera först |
 |---|---|
 | Modul 1 (Foundation) | `growth-os-philosophy`, `prompt-template-rmuk`, `reverse-prompting`, `prompt-contracts` |
-| Modul 2 (Market Intelligence) | `icp-interview`, `voc-research`, `brand-voice-interview`, `multi-agent-consensus`, `konkurrentanalys` |
+| Modul 2 (Market Intelligence) | `icp-builder`, `voc-research`, `brand-voice-interview`, `multi-agent-consensus`, `konkurrentanalys` |
 | Modul 3 (Webb, CRM & Lead Magnets) | `lead-magnet-ideation`, `lead-magnet-builder-interactive`, `landing-page-builder`, `crm-pipeline-mcp` |
 | Modul 4 (Content) | `content-ideation`, `short-form-video`, `image-post`, `industry-news-monitoring`, `airtable-content-os` |
 | Modul 5 (Outbound) | `list-building`, `lead-enrichment-scoring`, `linkedin-outreach-cowork`, `cold-email` |

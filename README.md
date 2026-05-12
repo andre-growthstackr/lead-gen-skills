@@ -25,7 +25,7 @@ Grunden allt annat står på: Growth OS-filosofin, prompt-arkitektur, klargöran
 
 | Skill | Beskrivning |
 |---|---|
-| `growth-os-philosophy` | Quick-reference för Growth OS-modellen: filer på datorn (icp-spec.md, brand.md, m.fl.) som ärvs av alla prompts. Förklarar skillnaden ad-hoc-prompting vs systemtänk. |
+| `growth-os-philosophy` | Quick-reference för Growth OS-modellen: filer på datorn (icp-summary.md, brand.md, m.fl.) som ärvs av alla prompts. Förklarar skillnaden ad-hoc-prompting vs systemtänk. |
 | `prompt-template-rmuk` | Roll/Mål/Uppgift/Kontext/Output-format-mall i markdown. Återanvändbar struktur för alla seriösa prompts. |
 | `reverse-prompting` | Claude ställer 3-5 klargörande frågor en i taget tills 95% säker, innan generering. Slut på generic output från diffusa briefer. |
 | `prompt-contracts` | Definition of Done + failure conditions per prompt. När Claude ska säga ifrån istället för att producera dålig output. |
@@ -38,7 +38,7 @@ Idealkund, kundröst, konkurrenter och varumärke som filer som driver allt down
 
 | Skill | Beskrivning |
 |---|---|
-| `icp-interview` | 12-fråge-interview för ICP-research, en fråga i taget. Scrapar din hemsida via Firecrawl-MCP. Output: `icp-spec.md` med firmographics, tech stack, mätbar smärta, köpfönster + TAM/SAM/dagligt lead-mål. |
+| `icp-builder` | Guided 8-stegs ICP-research med tre rutter (guided / data / web-research). Applicerar Mark Roberge's Green/Yellow/Red-framework, fyra-lager-modell (firmographic + behavioral + contextual + emotional), B2B/B2C dual-mode. Producerar polerat `.docx` med GYR-tabell, exclusion criteria, buyer intent signals, validation-schedule. Plus en kort `icp-summary.md` för Project Knowledge. |
 | `voc-research` | Voice of Customer-mining från G2/Capterra/Trustpilot/Reddit/YouTube via Firecrawl. Volymregel ≥100 datapunkter. Output: `voc-rapport.md` med topp-5 pains + ordagranna citat + `voice-of-customer.skill.md` för återanvändning. |
 | `brand-voice-interview` | 8-fråge-interview + hemside-scrape + konkurrent-kontrast. Output: `brand-guidelines.md` (5 sektioner) + `brand-guidelines.skill.md` (kortfattad version för återanvändning i alla framtida copy-jobb). |
 | `konkurrentanalys` | Skrapar 3-5 konkurrenter (hemsida + Meta Ads Library + LinkedIn) via Firecrawl. Bygger `konkurrent-matris.md` med explicit "Lucka"-sektion — där pengarna finns. Kan köras schemalagt för vecko-diff. |
@@ -52,7 +52,7 @@ Från lead magnet till CRM-pipeline — hela acquisition-funneln byggd och autom
 
 | Skill | Beskrivning |
 |---|---|
-| `lead-magnet-ideation` | Läser `icp-spec.md` + `voc-rapport.md` och genererar 10-15 lead magnet-idéer fördelat över TOFU/MOFU/BOFU med format (quiz/kalkylator/assessment), pain och köpsignal per idé. |
+| `lead-magnet-ideation` | Läser `icp-summary.md` + `voc-rapport.md` och genererar 10-15 lead magnet-idéer fördelat över TOFU/MOFU/BOFU med format (quiz/kalkylator/assessment), pain och köpsignal per idé. |
 | `lead-magnet-builder-interactive` | Bygger interaktiv HTML/JS-lead magnet (kalkylator/quiz/assessment) med email-capture, CRM-webhook och Vercel-deploy från en av tre templates. |
 | `landing-page-builder` | Bygger single-file HTML/CSS-landningssida (lead magnet / webinar / sales) med italicerat coral-utfallsord i hero och pain-section driven av VoC. |
 | `crm-pipeline-mcp` | Kör hela acquisition-funneln via HubSpot/GoHighLevel MCP — lead-intag, TOFU/MOFU/BOFU email+SMS-sekvenser, måndag-rapport på pipeline-status. |
@@ -91,7 +91,7 @@ Annonskoncept, Meta Ads, LinkedIn Ads och CFO-level analytics-rapportering.
 
 | Skill | Beskrivning |
 |---|---|
-| `ad-ideation-4-angles` | Genererar 12 ad-koncept (4 vinklar × 3 hooks) från `icp-spec.md` + `voc-rapport.md`. Distribuerar till `short-form-video` och image-post-Skill för produktion. |
+| `ad-ideation-4-angles` | Genererar 12 ad-koncept (4 vinklar × 3 hooks) från `icp-summary.md` + `voc-rapport.md`. Distribuerar till `short-form-video` och image-post-Skill för produktion. |
 | `meta-ads-cli` | Publicerar Meta Lead Gen-kampanj programmatiskt via Meta Ads CLI med Custom Audience från CRM, 4 ad sets per vinkel, Auto-Research-loop vid CPA-stegring >20%. |
 | `linkedin-ads` | LinkedIn Ads-publicering programmatiskt via LinkedIn Marketing API. Vinkel-mappning från `ad-ideation-4-angles`, 3-layer funnel (cold/warm/hot), Lookalike-expansion på Closed/Won-audience, CPL-cap. |
 | `analytics-rapport` | Schemalagd CFO-rapport varje måndag 06:00 som frågar 5 MCPs parallellt (GA4 + Meta Ads + LinkedIn Ads + HubSpot + Stripe). Beräknar CAC/Payback/Kanal-bidrag. Genererar `.pptx` med tre paneler och mejlar. |
@@ -114,7 +114,7 @@ Skills i det här biblioteket bygger på en gemensam arkitektur:
 
 ```
 ~/.claude/ (eller motsvarande Project-rot)
-├── icp-spec.md             ← genereras av icp-interview
+├── icp-summary.md             ← genereras av icp-builder
 ├── voc-rapport.md          ← genereras av voc-research
 ├── konkurrent-matris.md    ← genereras av konkurrentanalys
 ├── brand-guidelines.md     ← genereras av brand-voice-interview

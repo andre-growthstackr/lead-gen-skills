@@ -38,7 +38,7 @@ Kan också triggas automatiskt via `scheduled-tasks` varje fredag kl 06:00.
 
 ## Inputs som behövs innan du börjar
 
-1. **ICP-nisch + sökord** — från `icp-spec.md`. Måste innehålla 5-10 sökord/fraser för Google News, plus 3-5 domäner att skrapa (TechCrunch, MarTech Today, etc).
+1. **ICP-nisch + sökord** — från `icp-summary.md`. Måste innehålla 5-10 sökord/fraser för Google News, plus 3-5 domäner att skrapa (TechCrunch, MarTech Today, etc).
 2. **Brand guidelines** — från `brand-guidelines.skill.md` i Project. För email-template-färger, font, voice.
 3. **Andrés voice-defaults** — direkt, push-back, naturlig svenska, inga AI-tells.
 4. **ESP-credentials** — HighLevel/MailChimp/HubSpot via MCP. Om ingen är ansluten — generera HTML och låt André klistra in manuellt.

@@ -17,7 +17,7 @@ Skill för empirisk Voice of Customer-mining. Lektion L2.2 i Claude för leadsge
 
 ## Vad denna skill INTE gör
 
-- Bygger inte ICP → använd `icp-interview`
+- Bygger inte ICP → använd `icp-builder`
 - Skriver inte färdig copy → använd output:en (voice-of-customer.skill.md) i framtida copy-jobb
 - Hittar inte på citat — bara ordagranna utdrag från riktiga källor
 
@@ -38,14 +38,14 @@ Aktivera även när användaren skriver copy och nämner att de "saknar kundens 
 
 ### Steg 1 — Hämta ICP eller be om input
 
-Kolla först om `icp-spec.md` finns i nuvarande working directory eller i Claude Project. Om ja — läs den och plocka ut:
+Kolla först om `icp-summary.md` finns i nuvarande working directory eller i Claude Project. Om ja — läs den och plocka ut:
 
 - Bransch + segment
 - Produkt-kategori (vad de köper, t.ex. "marketing automation", "CRM", "lead gen-byrå")
 - 3-5 konkurrent-namn eller produkt-namn de jämför med
 - Den mätbara smärtan (Fråga 7 från ICP-interviewn)
 
-Om `icp-spec.md` saknas — be användaren om:
+Om `icp-summary.md` saknas — be användaren om:
 1. Vilken produkt-kategori du säljer (t.ex. "B2B marketing automation")
 2. 3-5 konkurrenter eller jämförbara produkter
 3. Vilken målgrupp (CMO, Head of Growth, etc.)

@@ -17,7 +17,7 @@ Skill för att bygga en konkurrent-matris som faktiskt informerar GTM-beslut —
 ## Vad denna skill INTE gör
 
 - Marknadsstorlek / TAM-research → vanlig research-skill eller NotebookLM
-- ICP-research → `icp-researcher` / `icp-interview`
+- ICP-research → `icp-researcher` / `icp-builder`
 - Voice-research på konkurrenter → `voc-research`
 - Formulera vår egen positionering → `multi-agent-consensus` (denna skill levererar input till den)
 
@@ -39,7 +39,7 @@ Skillen körs också proaktivt (efter att Claude flaggat det och André sagt ok)
 
 ## Vad du behöver innan du börjar
 
-1. **ICP-spec** — `icp-spec.md` från Project. Skillen läser denna för att veta vilka konkurrenter som är relevanta (samma ICP, inte bara samma produktkategori).
+1. **ICP-spec** — `icp-summary.md` från Project. Skillen läser denna för att veta vilka konkurrenter som är relevanta (samma ICP, inte bara samma produktkategori).
 2. **Företagsnamn eller kategori** — antingen ger André 3-5 specifika namn, eller en kategori-beskrivning ("svenska Claude-kurser för marknadsförare") som skillen själv hittar konkurrenter inom.
 3. **Firecrawl-MCP** tillgänglig (`mcp__firecrawl__*`). Om inte — flagga och avbryt.
 4. **(Valfritt) SEMrush/Ahrefs-MCP** för sökord-kolumnen. Om inte tillgänglig — hoppa över den kolumnen, flagga som "ej tillgänglig".
@@ -51,7 +51,7 @@ Skillen körs också proaktivt (efter att Claude flaggat det och André sagt ok)
 
 Om André bara har gett en kategori-beskrivning:
 
-1. Läs `icp-spec.md` — vilka söker ICP efter när dom letar lösning på den smärta vi adresserar?
+1. Läs `icp-summary.md` — vilka söker ICP efter när dom letar lösning på den smärta vi adresserar?
 2. Använd `firecrawl_search` för att hitta 8-12 potentiella konkurrenter
 3. Filtrera till 3-5 som faktiskt delar ICP-overlap (samma målgrupp, inte bara samma produkt-kategori)
 4. Visa listan för André och få ok innan du börjar skrapa
@@ -107,7 +107,7 @@ Om inte — hoppa, flagga som "ej tillgänglig" i matrisen.
 
 Detta är hela poängen med skillen. När alla 3-5 konkurrenters data är insamlad — leta efter:
 
-1. **Vinklar som ingen säger** — tema/smärta/outcome som ICP bryr sig om (från `icp-spec.md`) men ingen konkurrent adresserar
+1. **Vinklar som ingen säger** — tema/smärta/outcome som ICP bryr sig om (från `icp-summary.md`) men ingen konkurrent adresserar
 2. **Format/kanal-gap** — kanaler där konkurrenter inte är aktiva men ICP är
 3. **Pricing-gap** — pris-nivåer eller paketering som ingen täcker
 
@@ -123,7 +123,7 @@ Skriv `konkurrent-matris.md` i exakt formatet nedan. Spara i `marketing/konkurre
 # Konkurrent-matris — [marknad/kategori]
 
 **Körd:** [YYYY-MM-DD]
-**ICP:** [1-mening från icp-spec.md]
+**ICP:** [1-mening från icp-summary.md]
 **Konkurrenter analyserade:** [Företag 1, Företag 2, ...]
 **Källor:** Hemsida (Firecrawl), Meta Ads Library, LinkedIn. [SEO via SEMrush — om tillämpligt]
 
@@ -242,7 +242,7 @@ Schemalagd version körs autonomt — men om en diff visar något substantiellt 
 
 1. **Klargör scope.** Specifika konkurrenter eller kategori-baserad upptäckt? Ny analys eller diff? Hur många konkurrenter (3-5)?
 
-2. **Läs `icp-spec.md`.** Du behöver veta ICP för att veta vilka konkurrenter som är relevanta och vilka luckor som faktiskt är luckor.
+2. **Läs `icp-summary.md`.** Du behöver veta ICP för att veta vilka konkurrenter som är relevanta och vilka luckor som faktiskt är luckor.
 
 3. **Läs `references/firecrawl-prompts.md`.** Innehåller exakta prompts per skrapnings-uppgift (hemsida, Meta Ads, LinkedIn). Använd dom — improvisera inte Firecrawl-prompts.
 

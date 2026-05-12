@@ -1,6 +1,6 @@
 ---
 name: list-building
-description: Bygg en kvalificerad B2B-leadslista (50-100 leads) genom ICP-driven käll-väljare och Airtable-import. Aktiveras varje gång användaren skriver "bygg leadslista", "list building", "sammanställ leads", "scrapa leads", "kör list building" eller refererar till L5.1 i kursen. Skillen läser `icp-spec.md` från Project, väljer rätt lead-källa (Apify, Google Maps, Apollo.io, Aleads) baserat på ICP, kör scrape, strukturerar output och dumpar leadsen i Airtable Leads-tabell via MCP. Använd den även när användaren bara säger "jag behöver leads" utan att specificera källa — skillen ÄR käll-väljaren.
+description: Bygg en kvalificerad B2B-leadslista (50-100 leads) genom ICP-driven käll-väljare och Airtable-import. Aktiveras varje gång användaren skriver "bygg leadslista", "list building", "sammanställ leads", "scrapa leads", "kör list building" eller refererar till L5.1 i kursen. Skillen läser `icp-summary.md` från Project, väljer rätt lead-källa (Apify, Google Maps, Apollo.io, Aleads) baserat på ICP, kör scrape, strukturerar output och dumpar leadsen i Airtable Leads-tabell via MCP. Använd den även när användaren bara säger "jag behöver leads" utan att specificera källa — skillen ÄR käll-väljaren.
 ---
 
 # list-building
@@ -9,7 +9,7 @@ Skill för att bygga steg 1 i outbound-pipelinen: råleadslistan. Den orkestrera
 
 ## Vad skillen gör
 
-- Läser `icp-spec.md` från aktivt Claude Project för kvalifikationskriterier
+- Läser `icp-summary.md` från aktivt Claude Project för kvalifikationskriterier
 - Väljer rätt lead-källa (Apify, Google Maps, Apollo.io, Aleads) baserat på ICP-typ
 - Konfigurerar scrape-parametrar mot vald källa
 - Kör scraping och får 50-100 leads som CSV/JSON
@@ -39,7 +39,7 @@ Aktivera när användaren skriver något av följande (svenska eller engelska):
 
 ## Källval — fyra vägar
 
-Skillen läser `icp-spec.md` och matchar mot dessa fyra källor. Detaljerad logik finns i `references/source-selection.md`.
+Skillen läser `icp-summary.md` och matchar mot dessa fyra källor. Detaljerad logik finns i `references/source-selection.md`.
 
 | Källa | När den passar | Output |
 |---|---|---|
@@ -55,7 +55,7 @@ Default-prioritering om ICP är oklar: fråga André innan du gissar.
 ### 1. Läs ICP-spec
 
 ```
-Read icp-spec.md från aktivt Claude Project
+Read icp-summary.md från aktivt Claude Project
 ```
 
 Identifiera:
@@ -137,7 +137,7 @@ Nästa steg: kör lead-enrichment-scoring för att berika och poängsätta.
 
 Skillen stannar och frågar användaren om:
 
-- `icp-spec.md` saknas i Project — be André skapa eller peka ut
+- `icp-summary.md` saknas i Project — be André skapa eller peka ut
 - Käll-val är otydligt mellan två källor — fråga vilken som föredras
 - Scrape-verktyg svarar inte — kontrollera Apify-token, Apollo-credentials eller annan auth
 - Scrape returnerar färre än 20 leads — be om bredare ICP-kriterier

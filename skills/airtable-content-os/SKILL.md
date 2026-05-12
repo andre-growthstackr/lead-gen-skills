@@ -61,7 +61,7 @@ Det faktiska innehållet — drafted, schemalagt eller publicerat.
 | Hook-rating | Number 1-5 | Manuell bedömning av hook-styrka |
 | Owner | Single collaborator | Vem ansvarar |
 | Brand-check | Checkbox | Har passerat brand-guidelines.skill.md |
-| ICP-check | Checkbox | Har passerat icp-spec.md |
+| ICP-check | Checkbox | Har passerat icp-summary.md |
 | Skapad | Created time | Auto |
 | Senast ändrad | Last modified time | Auto |
 
@@ -115,7 +115,7 @@ För att Claude ska kunna läsa/skriva mot basen:
 ## Workflow för veckogranskning
 
 1. Måndag morgon: Claude queryar Vy 1, listar allt i Review
-2. Per content-stycke: Claude kollar mot brand-guidelines.skill.md + icp-spec.md
+2. Per content-stycke: Claude kollar mot brand-guidelines.skill.md + icp-summary.md
 3. Claude flaggar avvikelser (förbjudna ord, fel ICP-segment, hook-rating < 3)
 4. Användaren godkänner eller skickar tillbaka till Drafting
 5. Approved-content schemaläggs i Distribution-tabellen
@@ -124,7 +124,7 @@ För att Claude ska kunna läsa/skriva mot basen:
 
 Säg ifrån om:
 
-- Användaren vill skapa basen utan att ha icp-spec.md och brand-guidelines.skill.md — Content OS fungerar inte utan dom som referens
+- Användaren vill skapa basen utan att ha icp-summary.md och brand-guidelines.skill.md — Content OS fungerar inte utan dom som referens
 - Användaren vill lägga till >5 statusar — Status-fält ska vara enkla, inte ett Kanban-vetenskap
 - Användaren vill att Claude ska auto-publicera — publicering är explicit-permission-action, sker manuellt
 

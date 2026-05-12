@@ -37,7 +37,7 @@ Om användaren ber om något som inte är ideation — hänvisa till rätt skill
 
 ## Inputs som behövs innan du börjar
 
-1. **ICP-spec** — från `icp-spec.md` i Project. Måste innehålla minst: smärta-topplista, jobs-to-be-done, plattformar där ICP hänger.
+1. **ICP-spec** — från `icp-summary.md` i Project. Måste innehålla minst: smärta-topplista, jobs-to-be-done, plattformar där ICP hänger.
 2. **VoC-rapport** — från `voc-rapport.md` i Project. Måste innehålla minst: 10+ verkliga citat per smärta, kategoriserade efter funnel-stadie.
 3. **Brand guidelines** — från `brand-guidelines.skill.md` i Project. Voice + förbjudna ord + visuell riktning.
 4. **Vecknummer eller startdatum** — vilka 4 veckor planen ska täcka.
@@ -49,7 +49,7 @@ Om något fattas — fråga användaren innan du börjar. Generera inte content 
 
 ### Steg 1: Läs in input
 
-Läs in `icp-spec.md`, `voc-rapport.md`, `brand-guidelines.skill.md` från Project. Notera:
+Läs in `icp-summary.md`, `voc-rapport.md`, `brand-guidelines.skill.md` från Project. Notera:
 
 - 3-5 topp-smärtor från ICP
 - 10-20 VoC-citat som ska kunna mappas mot idéerna
@@ -79,7 +79,7 @@ För varje slot (vecka 1 SFV #1, vecka 1 SFV #2, ...) genererar du:
 - **Body-outline** (3-5 punkter) — vad sägs, vilken ordning
 - **CTA** (1 mening) — vad ska tittaren göra
 - **Distribution** (lista plattformar)
-- **ICP-smärta mappad** (referens till specifik smärta-ID från `icp-spec.md`)
+- **ICP-smärta mappad** (referens till specifik smärta-ID från `icp-summary.md`)
 - **VoC-citat mappat** (en eller flera citat från `voc-rapport.md` som motiverar vinkeln)
 
 ### Steg 4: Dependency-check

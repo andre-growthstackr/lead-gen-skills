@@ -103,7 +103,7 @@ Använd denna struktur när du kör scoring:
 Du är scoring-domare för B2B-leads.
 
 ICP-spec:
-<icp-spec.md innehåll>
+<icp-summary.md innehåll>
 
 Lead-data:
 <berikad lead-data som JSON>

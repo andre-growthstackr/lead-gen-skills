@@ -52,7 +52,7 @@ Hardcoded tier-lista (uppdaterbar av André):
 | Sub-stack från okänd | D | 40 |
 | Random blogg / forum-tråd | E | 25 |
 
-Lista underhålls i `icp-spec.md` under sektionen "Källor".
+Lista underhålls i `icp-summary.md` under sektionen "Källor".
 
 ## 3. Recency (20%)
 
@@ -69,7 +69,7 @@ Newsletter går ut fredag — så nyheter från måndag-torsdag samma vecka är 
 
 ## 4. Relevans för ICP (15%)
 
-Match mot ICP-sökord från `icp-spec.md`. Räkna:
+Match mot ICP-sökord från `icp-summary.md`. Räkna:
 
 - Antal sökord-matches i titeln (vikt × 3)
 - Antal sökord-matches i sammanfattning (vikt × 1)

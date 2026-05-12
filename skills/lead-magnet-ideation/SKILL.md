@@ -1,15 +1,15 @@
 ---
 name: lead-magnet-ideation
-description: Generera 10-15 lead magnet-idéer fördelat på TOFU/MOFU/BOFU för en B2B-marknadsförare, baserat på icp-spec.md + voc-rapport.md från Project. Varje idé får format (quiz/kalkylator/assessment/checklista), vilken pain den löser och vilken signal som indikerar köpfönster. Aktivera den när användaren skriver "lead magnet idéer", "ideation lead magnets", "TOFU MOFU BOFU lead magnets", "vilka lead magnets ska jag bygga", eller bara "ge mig lead magnet-förslag baserat på min ICP". Skill:en triggar även när användaren ber om "lead magnet-brainstorm" utan att specificera funnel-stadie — den ÄR funnel-fördelningen. Output är `lead-magnet-ideer.md` med tre tabeller (en per stadie) plus en kort rationale-sektion. Skill:en hoppar aldrig över ICP- och voc-läsningen — den är hela poängen.
+description: Generera 10-15 lead magnet-idéer fördelat på TOFU/MOFU/BOFU för en B2B-marknadsförare, baserat på icp-summary.md + voc-rapport.md från Project. Varje idé får format (quiz/kalkylator/assessment/checklista), vilken pain den löser och vilken signal som indikerar köpfönster. Aktivera den när användaren skriver "lead magnet idéer", "ideation lead magnets", "TOFU MOFU BOFU lead magnets", "vilka lead magnets ska jag bygga", eller bara "ge mig lead magnet-förslag baserat på min ICP". Skill:en triggar även när användaren ber om "lead magnet-brainstorm" utan att specificera funnel-stadie — den ÄR funnel-fördelningen. Output är `lead-magnet-ideer.md` med tre tabeller (en per stadie) plus en kort rationale-sektion. Skill:en hoppar aldrig över ICP- och voc-läsningen — den är hela poängen.
 ---
 
 # lead-magnet-ideation
 
-Skill för att brainstorma lead magnets till en specifik B2B-ICP. En lead magnet per funnel-stadie — inte en generic "subscribe to newsletter". Idéerna kommer från pain points i `voc-rapport.md` och köpsignaler i `icp-spec.md`, inte från Claude:s allmänna kunskap.
+Skill för att brainstorma lead magnets till en specifik B2B-ICP. En lead magnet per funnel-stadie — inte en generic "subscribe to newsletter". Idéerna kommer från pain points i `voc-rapport.md` och köpsignaler i `icp-summary.md`, inte från Claude:s allmänna kunskap.
 
 ## Vad skillen gör
 
-- Läser `icp-spec.md` + `voc-rapport.md` från Project (output från Modul 2)
+- Läser `icp-summary.md` + `voc-rapport.md` från Project (output från Modul 2)
 - Genererar 10-15 lead magnet-idéer fördelat över TOFU / MOFU / BOFU
 - Per idé: format (quiz / kalkylator / assessment / checklista / mall / mini-tool), vilken pain den löser, vilken signal som indikerar köpfönster
 - Skriver `lead-magnet-ideer.md` med tre tabeller (en per stadie) + rationale per topp-tre
@@ -41,7 +41,7 @@ Undertrigga inte. Om användaren ens nämner "lead magnet" i samband med "idé /
 
 ## Input som krävs innan du börjar
 
-1. **`icp-spec.md`** från Project-filerna (output från Modul 2 ICP-skill)
+1. **`icp-summary.md`** från Project-filerna (output från Modul 2 ICP-skill)
 2. **`voc-rapport.md`** från Project-filerna (output från Modul 2 VoC-skill)
 
 Om någon av dessa filer saknas — fråga användaren. Generera inte lead magnets på lös basis. Generic lead magnet-listor är värdelösa.
@@ -54,7 +54,7 @@ Om båda finns — börja direkt utan att fråga.
 
 Hämta båda filerna. Skanna efter:
 
-- **Från `icp-spec.md`:** firmographics, tech stack, mätbara smärtor, köpfönster-signaler
+- **Från `icp-summary.md`:** firmographics, tech stack, mätbara smärtor, köpfönster-signaler
 - **Från `voc-rapport.md`:** topp-3 pain points (ordagrant språk), vad som triggar köpsamtal, vad som blockar köp
 
 Lista vilka pains du har att jobba med. Minst 3-5 pains måste vara identifierade — annars stoppa och be om bättre VoC.
@@ -114,7 +114,7 @@ Struktur:
 ```markdown
 # Lead magnet-idéer — [Företagsnamn / ICP-namn]
 
-**Källor:** icp-spec.md + voc-rapport.md  
+**Källor:** icp-summary.md + voc-rapport.md  
 **Genererad:** [datum]  
 **Totalt antal idéer:** [10-15]
 
@@ -180,7 +180,7 @@ Lever inte filen om något av detta är sant:
 - **En idé har ingen specifik pain från VoC** — generic ideation är dödfött, ta bort idén
 - **Två idéer i samma stadie är samma format med samma pain** — duplikat, slå ihop eller ta bort en
 - **Topp-tre-listan saknar rationale** — fyll i innan leverans
-- **icp-spec.md eller voc-rapport.md saknas i Project** — stoppa, fråga användaren
+- **icp-summary.md eller voc-rapport.md saknas i Project** — stoppa, fråga användaren
 
 ## Anti-patterns att undvika
 
