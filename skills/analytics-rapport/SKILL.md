@@ -20,7 +20,7 @@ Schemalagd skill för veckovis marketing-analytics. Körs via Claude Routine var
 - Visar inte vanity metrics (CTR, reach, impressions, frequency) i topp-panelen — de hör hemma i drill-down
 - Räknar inte sista-klick-attribution som primary — använder HubSpot/HighLevel lead source vid closed/won
 - Skapar inte dashboard i Looker/PowerBI — output är .pptx för CFO-läsning
-- Hanterar inte kampanj-publicering — det gör `meta-ads-cli` och `linkedin-ads-coldiq-wrapper`
+- Hanterar inte kampanj-publicering — det gör `meta-ads-cli` och `linkedin-ads`
 
 ## Triggers
 

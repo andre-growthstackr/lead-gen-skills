@@ -18,7 +18,7 @@ Skill för att generera annonskoncept-portföljen som matar Modul 6:s kampanjer.
 ## Vad skillen INTE gör
 
 - Producerar inte själva videon eller bilden — det gör `create-short-form-video` (L4.2) och `image-post-generation` (L4.3)
-- Publicerar inte kampanjen — det gör `meta-ads-cli` (L6.2) och `linkedin-ads-coldiq-wrapper` (L6.3)
+- Publicerar inte kampanjen — det gör `meta-ads-cli` (L6.2) och `linkedin-ads` (L6.3)
 - Skriver inte ny ICP eller VoC från noll — antar att de finns i Project
 
 ## Triggers

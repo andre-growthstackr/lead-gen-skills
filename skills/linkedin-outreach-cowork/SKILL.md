@@ -19,7 +19,7 @@ Skill för steg 3 i outbound-pipelinen: LinkedIn-outreach via Claude Cowork. Tar
 
 ## Vad skillen INTE gör
 
-- Bygga lista → `list-building-wrapper`
+- Bygga lista → `list-building`
 - Berika/scora → `lead-enrichment-scoring`
 - Cold email → `cold-email`
 - Generic LinkedIn-aktivitet (likes, comments) — bara outreach

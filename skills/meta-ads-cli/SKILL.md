@@ -20,7 +20,7 @@ Skill för att köra Meta Ads-kampanjer programmatiskt från Claude Code. Bygger
 
 - Producerar inte creatives — det gör L4.2 (video) och L4.3 (image)
 - Skriver inte vinklar eller hooks — det gör `ad-ideation-4-angles`
-- Hanterar inte LinkedIn — det gör `linkedin-ads-coldiq-wrapper`
+- Hanterar inte LinkedIn — det gör `linkedin-ads`
 - Bygger inte analytics-rapporter — det gör `analytics-rapport`
 
 ## Triggers

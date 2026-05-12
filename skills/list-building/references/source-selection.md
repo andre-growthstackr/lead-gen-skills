@@ -1,6 +1,6 @@
-# Källval för list-building-wrapper
+# Källval för list-building
 
-Detaljerad mappning mellan ICP-typ och rätt lead-källa. Läs detta varje gång `list-building-wrapper` ska välja källa.
+Detaljerad mappning mellan ICP-typ och rätt lead-källa. Läs detta varje gång `list-building` ska välja källa.
 
 ## Beslutsträd
 

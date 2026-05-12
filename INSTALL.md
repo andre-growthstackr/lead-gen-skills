@@ -41,8 +41,8 @@ Eller, installera selektivt — välj bara dom Skills som matchar var du är i k
 | Modul 2 (Market Intelligence) | `icp-interview`, `voc-research`, `brand-voice-interview`, `multi-agent-consensus`, `konkurrentanalys` |
 | Modul 3 (Webb, CRM & Lead Magnets) | `lead-magnet-ideation`, `lead-magnet-builder-interactive`, `landing-page-builder`, `crm-pipeline-mcp` |
 | Modul 4 (Content) | `content-ideation`, `short-form-video`, `image-post`, `industry-news-monitoring`, `airtable-content-os` |
-| Modul 5 (Outbound) | `list-building-wrapper`, `lead-enrichment-scoring`, `linkedin-outreach-cowork`, `cold-email` |
-| Modul 6 (Ads) | `ad-ideation-4-angles`, `meta-ads-cli`, `linkedin-ads-coldiq-wrapper`, `analytics-rapport` |
+| Modul 5 (Outbound) | `list-building`, `lead-enrichment-scoring`, `linkedin-outreach-cowork`, `cold-email` |
+| Modul 6 (Ads) | `ad-ideation-4-angles`, `meta-ads-cli`, `linkedin-ads`, `analytics-rapport` |
 
 ## Claude.ai (web)
 
@@ -67,12 +67,12 @@ Vissa Skills kräver tilläggsverktyg:
 | Skill | Kräver |
 |---|---|
 | `voc-research`, `konkurrentanalys`, `industry-news-monitoring` | Firecrawl MCP (firecrawl.dev) |
-| `list-building-wrapper` | Apify-konto + Apify MCP, eller ColdIQ List Building-skill |
+| `list-building` | Apify-konto + Apify MCP |
 | `crm-pipeline-mcp` | HubSpot eller GoHighLevel MCP |
 | `linkedin-outreach-cowork` | Claude Cowork (Chrome-extension) |
 | `cold-email` | Egen sekundärdomän + SPF/DKIM/DMARC + Instantly-konto (eller motsvarande) |
 | `meta-ads-cli` | Meta Ads CLI + Meta Business Manager-access |
-| `linkedin-ads-coldiq-wrapper` | LinkedIn Campaign Manager + Insight Tag på sajten |
+| `linkedin-ads` | LinkedIn Campaign Manager + Insight Tag på sajten |
 | `analytics-rapport` | GA4 + Meta Ads API + LinkedIn Ads API + HubSpot/HighLevel MCP + Stripe MCP |
 
 Setup för varje verktyg dokumenteras i respektive Skills `references/`-mapp.

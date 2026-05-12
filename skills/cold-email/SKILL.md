@@ -18,7 +18,7 @@ Skill för steg 4 i outbound-pipelinen: cold email till kvalificerade leads. Han
 
 ## Vad skillen INTE gör
 
-- Bygga rålista → `list-building-wrapper`
+- Bygga rålista → `list-building`
 - Berika/scora → `lead-enrichment-scoring`
 - LinkedIn-outreach → `linkedin-outreach-cowork`
 - Hantera huvuddomän-konfiguration — sekundärdomän är skyddslagret
@@ -89,7 +89,7 @@ Två vägar. Välj baserat på behov:
 **Workflow:**
 1. Koppla sekundärdomän till Instantly
 2. Importera kvalificerade leads från Airtable (score > 70)
-3. Kör Cold Email Skill (från ColdIQ-repo) i Claude Code för att generera trigger-baserad copy per lead
+3. Kör denna cold-email Skill i Claude Code för att generera trigger-baserad copy per lead
 4. Importera generated copy till Instantly som personalised campaign
 5. Konfigurera sändnings-rytm (max 30-50/dag/inbox)
 6. Starta kampanj
@@ -125,7 +125,7 @@ Detaljerade prompts per trigger-typ finns i `references/trigger-prompts.md`.
 
 ### Fas 4: Email-generation per lead
 
-Använd Cold Email Skill från ColdIQ-repo, men injicera:
+Använd denna Skill men injicera:
 
 1. Trigger som hook (första 1-2 meningar)
 2. Bro till varför du skriver (1 mening)

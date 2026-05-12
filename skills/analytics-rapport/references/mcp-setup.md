@@ -91,7 +91,7 @@ Förväntat: lista med kampanjer och spend.
 
 ## 3. LinkedIn Ads
 
-**MCP-paket:** ColdIQ:s LinkedIn Marketing-MCP eller community
+**MCP-paket:** Community LinkedIn Marketing-MCP
 **Docs:** https://learn.microsoft.com/en-us/linkedin/marketing/
 
 ### Setup

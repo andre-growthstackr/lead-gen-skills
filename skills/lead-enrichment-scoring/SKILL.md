@@ -5,7 +5,7 @@ description: Berika och poängsätt råleads (0-100) från Airtable Leads-tabell
 
 # lead-enrichment-scoring
 
-Skill för steg 2 i outbound-pipelinen: från råleads till kvalificerade leads. Hämtar leads från Airtable Leads-tabell (skapade av `list-building-wrapper` i L5.1), berikar via Apify + Firecrawl, scorar 0-100 med Claude som domare, och markerar score > 70 som "kvalificerad". Bara dessa går vidare till L5.3 (LinkedIn) eller L5.4 (cold email).
+Skill för steg 2 i outbound-pipelinen: från råleads till kvalificerade leads. Hämtar leads från Airtable Leads-tabell (skapade av `list-building` i L5.1), berikar via Apify + Firecrawl, scorar 0-100 med Claude som domare, och markerar score > 70 som "kvalificerad". Bara dessa går vidare till L5.3 (LinkedIn) eller L5.4 (cold email).
 
 ## Vad skillen gör
 
@@ -19,7 +19,7 @@ Skill för steg 2 i outbound-pipelinen: från råleads till kvalificerade leads.
 
 ## Vad skillen INTE gör
 
-- Bygga rålistan → `list-building-wrapper`
+- Bygga rålistan → `list-building`
 - Skicka outreach → `linkedin-outreach-cowork` eller `cold-email`
 - Definiera ICP-kriterier → görs i Modul 2 (ICP research)
 

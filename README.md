@@ -2,8 +2,6 @@
 
 Ett komplett bibliotek av **Claude Skills** för B2B/B2C-marknadsföring, byggt för kursen *Claude för leadsgenerering*. **28 Skills** som täcker hela pipelinen från ICP-research till annonsering, organiserade som filer på din dator som ärvs av allt arbete — det här är ett *Growth OS*, inte en chatkonversation.
 
-> Inspirerad av strukturen i [ColdIQ:s GTM Skills](https://github.com/sachacoldiq/ColdIQ-s-GTM-Skills), anpassad och översatt till svenska B2B/B2C-leadsgenerering med GrowthStackr-tonalitet och praktisk-først-pedagogik.
-
 ## Overview
 
 | Modul | Skills | Tema |
@@ -80,7 +78,7 @@ Lead-listor, berikning, scoring, LinkedIn outreach och cold email — hela outbo
 
 | Skill | Beskrivning |
 |---|---|
-| `list-building-wrapper` | Wrapper kring [ColdIQ List Building-skill](https://github.com/sachacoldiq/ColdIQ-s-GTM-Skills) med ICP-driven käll-väljare (Apify/Google Maps/Apollo.io/Aleads) och Airtable-import via MCP. |
+| `list-building` | ICP-driven käll-väljare (Apify/Google Maps/Apollo.io/Aleads) som scrapar 50-100 leads och importerar till Airtable Leads-tabell via MCP. |
 | `lead-enrichment-scoring` | Sekvens diskvalificering → berikning (Apify + Firecrawl + APIs) → 0-100 scoring i fyra dimensioner med Claude som domare. Score > 70 markeras kvalificerad. |
 | `linkedin-outreach-cowork` | Claude Cowork mot synligt Chrome, auto-research per lead via Activity-fliken, "referens + bro + CTA"-formel ≤300 tecken, max 25/dag, tvåstegs uppföljning. |
 | `cold-email` | Sekundärdomän-setup, SPF/DKIM/DMARC, warmup 4-6 v, trigger-detektion, Instantly vs Claude Code/Cowork-väg, AI Appointment Setter med 30-sek auto-respond. |
@@ -95,7 +93,7 @@ Annonskoncept, Meta Ads, LinkedIn Ads och CFO-level analytics-rapportering.
 |---|---|
 | `ad-ideation-4-angles` | Genererar 12 ad-koncept (4 vinklar × 3 hooks) från `icp-spec.md` + `voc-rapport.md`. Distribuerar till `short-form-video` och image-post-Skill för produktion. |
 | `meta-ads-cli` | Publicerar Meta Lead Gen-kampanj programmatiskt via Meta Ads CLI med Custom Audience från CRM, 4 ad sets per vinkel, Auto-Research-loop vid CPA-stegring >20%. |
-| `linkedin-ads-coldiq-wrapper` | Wrapper runt [ColdIQ:s LinkedIn Ads-skill](https://github.com/sachacoldiq/ColdIQ-s-GTM-Skills) med kursens vinkel-mappning, 3-layer funnel (cold/warm/hot), Lookalike-expansion. |
+| `linkedin-ads` | LinkedIn Ads-publicering programmatiskt via LinkedIn Marketing API. Vinkel-mappning från `ad-ideation-4-angles`, 3-layer funnel (cold/warm/hot), Lookalike-expansion på Closed/Won-audience, CPL-cap. |
 | `analytics-rapport` | Schemalagd CFO-rapport varje måndag 06:00 som frågar 5 MCPs parallellt (GA4 + Meta Ads + LinkedIn Ads + HubSpot + Stripe). Beräknar CAC/Payback/Kanal-bidrag. Genererar `.pptx` med tre paneler och mejlar. |
 
 ---
@@ -148,7 +146,6 @@ claude
 
 - **Kursen** *Claude för leadsgenerering* — 26 lektioner i 7 moduler. Lektionsbeskrivningar, manus, slides och workbooks är canon för hur Skills i det här repot ska användas.
 - **NotebookLM-source** — 104 verifierade källor (YouTube-videos, blogginlägg, dokumentation) som backar upp innehållet i Skills.
-- **ColdIQ GTM Skills** — biblioteket vi byggt strukturen efter och vissa Skills wrappar (`list-building-wrapper`, `linkedin-ads-coldiq-wrapper`). [https://github.com/sachacoldiq/ColdIQ-s-GTM-Skills](https://github.com/sachacoldiq/ColdIQ-s-GTM-Skills)
 
 ---
 
